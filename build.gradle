@@ -1,0 +1,23 @@
+//Example build.gradle file
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.3.0'
+    //Example additional LESS support
+    classpath 'com.bertramlabs.plugins:less-asset-pipeline:2.3.0'
+  }
+}
+
+apply plugin: 'asset-pipeline'
+
+assets {
+  minifyJs = true
+  minifyCss = true
+  enableDigests=true
+  enableSourceMaps = true
+}
+
+
+defaultTasks 'assetClean', 'assetCompile'
